@@ -16,10 +16,10 @@ after-success:
   - docker build -t oldschoolweaver/multi-server ./server
   - docker build -t oldschoolweaver/multi-worker ./worker
 
-#log in docker hub
+  #log in docker hub
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID"  --password-stdin 
-#Take the images to docker hub
-- docker push oldschoolweaver/multi-client
-- docker push oldschoolweaver/multi-nginx
-- docker push oldschoolweaver/multi-server
-- docker push oldschoolweaver/multi-worker
+  #Take the images to docker hub
+  - docker push oldschoolweaver/multi-client
+  - docker push oldschoolweaver/multi-nginx
+  - docker push oldschoolweaver/multi-server
+  - docker push oldschoolweaver/multi-worker
