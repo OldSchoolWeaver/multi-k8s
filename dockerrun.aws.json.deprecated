@@ -1,0 +1,36 @@
+{
+    "AWSEBDockerrunVersion" : 2,
+    "containerDefinitions": [
+        {
+            "name": "client",
+            "image": "oldschoolweaver/multi-client",
+            "hostname":"client", 
+            "essential": false       
+        },
+        {
+            "name": "server",
+            "image": "oldschoolweaver/multi-server",
+            "hostname":"api", 
+            "essential": false      
+        },
+        {
+            "name": "worker",
+            "image": "oldschoolweaver/multi-worker",
+            "hostname":"worker", 
+            "essential": false  
+        },
+        {
+            "name": "nginx",
+            "image": "oldschoolweaver/multi-nginx",
+            "hostname": "nginx", 
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
+            ],
+            "links": ["server","client"]  
+        }
+    ]    
+}
