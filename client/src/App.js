@@ -10,6 +10,7 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
+          <h1>Welcome to the FIB Calculator </h1>
           <img src={logo} className="App-logo" alt="logo" />
           <a
             className="App-link"
