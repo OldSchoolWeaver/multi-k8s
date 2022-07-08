@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: server-cluster-ip-service
+spec:
+  type: ClusterIP
+  selector:
+    component: server
+  ports:
+    - port: 5000 #How other ports/services inside of our node will talk to us
+      targetPort: 5000 # mapping between the expose port on the image and the clusterIP
