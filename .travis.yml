@@ -30,5 +30,6 @@ script:
   - kubectl version --short --client
   - docker run -e CI=true oldschoolweaver/react-test npm test
   #validate the AWS user
+  - aws sts get-caller-identity 
   - aws sts get-caller-identity --query Arn | grep multi-k8s-user -q && echo "IAM role valid" || echo "IAM role NOT valid"
 
