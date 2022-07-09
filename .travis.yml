@@ -16,7 +16,7 @@ before_install:
   #Login to Docker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID"  --password-stdin 
   #configure the AWS
-  - export AWS_ACCESS_KEY_ID= "$AWS_ACCESS_KEY" 
+  - export AWS_ACCESS_KEY_ID="$AWS_ACCESS_KEY" 
   - export AWS_SECRET_ACCESS_KEY="$AWS_SECRET_KEY"
   - export AWS_DEFAULT_REGION=ap-southeast-2
   #Test
